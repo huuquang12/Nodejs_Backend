@@ -20,6 +20,13 @@ const RoleShop = {
 };
 
 class AccessService {
+  // Log out
+  static logout = async (keyStore) => {
+    const delKey = await KeyTokenService.removeKeyById(keyStore._id);
+    console.log(delKey);
+    return delKey;
+  };
+
   /*
     1 - Check email is exists
     2 - Match password
